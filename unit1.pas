@@ -32,6 +32,7 @@ implementation
 { TCadastroPrincipal }
 
 //testegit
+//teste 2
 
 procedure TCadastroPrincipal.ClienteClick(Sender: TObject);
   var
