@@ -1,0 +1,35 @@
+object CadastroPrincipal: TCadastroPrincipal
+  Left = 350
+  Height = 240
+  Top = 250
+  Width = 320
+  Caption = 'Cadastros'
+  ClientHeight = 240
+  ClientWidth = 320
+  LCLVersion = '4.0.0.4'
+  object Cliente: TButton
+    Left = 16
+    Height = 25
+    Top = 24
+    Width = 75
+    Caption = 'Cliente'
+    TabOrder = 0
+    OnClick = ClienteClick
+  end
+  object CadastroFornecedor: TButton
+    Left = 208
+    Height = 25
+    Top = 24
+    Width = 75
+    Caption = 'Fornecedor'
+    TabOrder = 1
+  end
+  object CadastroProduto: TButton
+    Left = 112
+    Height = 25
+    Top = 24
+    Width = 75
+    Caption = 'Produto'
+    TabOrder = 2
+  end
+end

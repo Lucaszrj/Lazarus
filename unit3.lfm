@@ -1,0 +1,161 @@
+object IncluirCliente: TIncluirCliente
+  Left = 403
+  Height = 237
+  Top = 250
+  Width = 393
+  Caption = 'Incluir Cliente'
+  ClientHeight = 237
+  ClientWidth = 393
+  OnCreate = FormCreate
+  object BtIncluir: TButton
+    Left = 221
+    Height = 25
+    Top = 200
+    Width = 75
+    Caption = 'Incluir'
+    TabOrder = 0
+    OnClick = BtIncluirClick
+  end
+  object BClose: TButton
+    Left = 309
+    Height = 25
+    Top = 200
+    Width = 75
+    Caption = 'Cancelar'
+    TabOrder = 1
+    OnClick = BCloseClick
+  end
+  object EditNome: TEdit
+    Left = 8
+    Height = 23
+    Top = 21
+    Width = 240
+    TabOrder = 2
+  end
+  object RadioSexo: TRadioGroup
+    Left = 117
+    Height = 63
+    Top = 128
+    Width = 97
+    AutoFill = True
+    Caption = 'Sexo'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 43
+    ClientWidth = 93
+    Items.Strings = (
+      'Masculino'
+      'Feminino'
+    )
+    TabOrder = 3
+  end
+  object CheckAtivo: TCheckBox
+    Left = 8
+    Height = 19
+    Top = 168
+    Width = 46
+    Caption = 'Ativo'
+    TabOrder = 4
+  end
+  object EditCidade: TEdit
+    Left = 120
+    Height = 23
+    Top = 61
+    Width = 128
+    TabOrder = 5
+  end
+  object EditEndereco: TEdit
+    Left = 8
+    Height = 23
+    Top = 101
+    Width = 240
+    TabOrder = 6
+  end
+  object Cep: TEditButton
+    Left = 8
+    Height = 23
+    Top = 61
+    Width = 103
+    ButtonWidth = 23
+    MaxLength = 9
+    NumGlyphs = 1
+    PasswordChar = #0
+    TabOrder = 7
+    OnButtonClick = CepButtonClick
+    OnKeyDown = CepKeyDown
+    OnKeyPress = CepKeyPress
+  end
+  object LabelNome: TLabel
+    Left = 8
+    Height = 15
+    Top = 8
+    Width = 33
+    Caption = 'Nome'
+  end
+  object LabelCidade: TLabel
+    Left = 120
+    Height = 15
+    Top = 45
+    Width = 37
+    Caption = 'Cidade'
+  end
+  object LabelCep: TLabel
+    Left = 8
+    Height = 15
+    Top = 45
+    Width = 21
+    Caption = 'Cep'
+  end
+  object LabelEndereco: TLabel
+    Left = 8
+    Height = 15
+    Top = 85
+    Width = 49
+    Caption = 'Endereço'
+  end
+  object MemoCep: TMemo
+    Left = 256
+    Height = 185
+    Top = 8
+    Width = 128
+    Anchors = []
+    ScrollBars = ssAutoBoth
+    TabOrder = 8
+  end
+  object DateTime: TDateTimePicker
+    Left = 8
+    Height = 23
+    Top = 141
+    Width = 91
+    CenturyFrom = 1941
+    MaxDate = 2958465
+    MinDate = -53780
+    AutoSize = False
+    TabOrder = 9
+    TrailingSeparator = False
+    TextForNullDate = 'NULL'
+    LeadingZeros = True
+    ParentShowHint = False
+    Kind = dtkDate
+    TimeFormat = tf24
+    TimeDisplay = tdHMS
+    DateMode = dmComboBox
+    Date = 45857
+    Time = 0.843642094907409
+    UseDefaultSeparators = True
+    HideDateTimeParts = []
+    MonthNames = 'Long'
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 15
+    Top = 125
+    Width = 91
+    Caption = 'Data Nascimento'
+  end
+end

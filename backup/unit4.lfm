@@ -1,0 +1,28 @@
+inherited AlterarCliente: TAlterarCliente
+  Width = 256
+  Caption = 'Alterar Cliente'
+  ClientWidth = 256
+  inherited BtIncluir: TButton
+    Left = 88
+    Visible = False
+  end
+  inherited BClose: TButton
+    Left = 173
+  end
+  inherited MemoCep: TMemo
+    Left = 261
+    ParentShowHint = False
+  end
+  inherited DateTime: TDateTimePicker
+    HideDateTimeParts = [dtpHour, dtpMinute, dtpSecond, dtpMiliSec]
+  end
+  object BTAlterarCliente: TButton[15]
+    Left = 8
+    Height = 25
+    Top = 200
+    Width = 75
+    Caption = 'Salvar'
+    TabOrder = 10
+    OnClick = BTAlterarClienteClick
+  end
+end

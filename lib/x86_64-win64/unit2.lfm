@@ -1,0 +1,209 @@
+object ClienteCadastro: TClienteCadastro
+  Left = 350
+  Height = 254
+  Top = 250
+  Width = 819
+  Caption = 'Cadastro de Cliente'
+  ClientHeight = 254
+  ClientWidth = 819
+  LCLVersion = '4.0.0.4'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  object Consultar: TButton
+    Left = 8
+    Height = 25
+    Top = 64
+    Width = 75
+    Caption = 'Consultar'
+    TabOrder = 0
+    OnClick = ConsultarClick
+  end
+  object DBGrid1: TDBGrid
+    Left = 96
+    Height = 231
+    Top = 8
+    Width = 720
+    Anchors = []
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'Ref.'
+        Width = 88
+        FieldName = 'Ref.'
+      end    
+      item
+        Title.Caption = 'Nome'
+        Width = 88
+        FieldName = 'Nome'
+      end    
+      item
+        Title.Caption = 'Nascimento'
+        Width = 88
+        FieldName = 'Nascimento'
+      end    
+      item
+        Title.Caption = 'Sexo'
+        Width = 87
+        FieldName = 'Sexo'
+      end    
+      item
+        Title.Caption = 'Endereco'
+        Width = 87
+        FieldName = 'Endereco'
+      end    
+      item
+        Title.Caption = 'Cidade'
+        Width = 87
+        FieldName = 'Cidade'
+      end    
+      item
+        Title.Caption = 'Cep'
+        Width = 87
+        FieldName = 'Cep'
+      end    
+      item
+        Title.Caption = 'Ativo'
+        Width = 87
+        FieldName = 'Ativo'
+      end>
+    DataSource = DataSource1
+    FixedCols = 0
+    Options = [dgTitles, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    ShowHint = True
+    TabOrder = 1
+    OnKeyDown = DBGrid1KeyDown
+  end
+  object Alterar: TButton
+    Left = 8
+    Height = 25
+    Top = 128
+    Width = 75
+    Caption = 'Alterar'
+    TabOrder = 2
+    OnClick = AlterarClick
+  end
+  object Incluir: TButton
+    Left = 8
+    Height = 25
+    Top = 96
+    Width = 75
+    Caption = 'Incluir'
+    TabOrder = 3
+    OnClick = IncluirClick
+  end
+  object Deletar: TButton
+    Left = 8
+    Height = 25
+    Top = 160
+    Width = 75
+    Caption = 'Deletar'
+    TabOrder = 4
+    OnClick = DeletarClick
+  end
+  object EditBusca: TEdit
+    Left = 8
+    Height = 23
+    Top = 32
+    Width = 75
+    TabOrder = 5
+    OnChange = EditBuscaChange
+    OnKeyDown = EditBuscaKeyDown
+  end
+  object FecharCliente: TButton
+    Left = 8
+    Height = 25
+    Top = 192
+    Width = 75
+    Caption = 'Fechar'
+    TabOrder = 6
+    OnClick = FecharClienteClick
+  end
+  object DataSource1: TDataSource
+    DataSet = MemDataset1
+    Left = 64
+    Top = 208
+  end
+  object MemDataset1: TMemDataset
+    FieldDefs = <>
+    OnFilterRecord = MemDataset1FilterRecord
+    Left = 8
+    Top = 208
+    object MemDataset1Ref: TLongintField
+      FieldKind = fkData
+      FieldName = 'Ref.'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object MemDataset1Nome: TStringField
+      FieldKind = fkData
+      FieldName = 'Nome'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 255
+    end
+    object MemDataset1Nascimento: TStringField
+      FieldKind = fkData
+      FieldName = 'Nascimento'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object MemDataset1Sexo: TStringField
+      FieldKind = fkData
+      FieldName = 'Sexo'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object MemDataset1Endereco: TStringField
+      FieldKind = fkData
+      FieldName = 'Endereco'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 255
+    end
+    object MemDataset1Cidade: TStringField
+      FieldKind = fkData
+      FieldName = 'Cidade'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 255
+    end
+    object MemDataset1Cep: TStringField
+      FieldKind = fkData
+      FieldName = 'Cep'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object MemDataset1Ativo: TBooleanField
+      FieldKind = fkData
+      FieldName = 'Ativo'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+  end
+end
