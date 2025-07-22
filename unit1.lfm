@@ -6,7 +6,6 @@ object CadastroPrincipal: TCadastroPrincipal
   Caption = 'Cadastros'
   ClientHeight = 240
   ClientWidth = 320
-  LCLVersion = '4.0.0.4'
   object Cliente: TButton
     Left = 16
     Height = 25

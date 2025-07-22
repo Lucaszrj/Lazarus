@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls,
   DBGrids, fphttpclient, fpjson, jsonparser, DB, memds,DateUtils,
-  Unit3, opensslsockets, LCLType, Unit4;
+  Unit3, opensslsockets, LCLType, DBCtrls, Unit4;
 
 type
 
@@ -15,6 +15,9 @@ type
 
   TClienteCadastro = class(TForm)
     Alterar: TButton;
+    DataSourceUF: TDataSource;
+    DBLookupComboBox1: TDBLookupComboBox;
+    EditNomeUF: TEdit;
     FecharCliente: TButton;
     Deletar: TButton;
     EditBusca: TEdit;
@@ -31,8 +34,12 @@ type
     MemDataset1Nome: TStringField;
     MemDataset1Ref: TLongintField;
     MemDataset1Sexo: TStringField;
+    MemUF: TMemDataset;
+    MemUFid_uf: TLongintField;
+    MemUFuf: TStringField;
     procedure AlterarClick(Sender: TObject);
     procedure ConsultarClick(Sender: TObject);
+
     procedure DBGrid1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
       );
     procedure DeletarClick(Sender: TObject);
@@ -65,8 +72,20 @@ var
   FiltroTexto: String;
 
 procedure TClienteCadastro.FormCreate(Sender: TObject);
+
 begin
+  // Criar os datasets (porque os campos já existem)
+  memUF.CreateDataSet;
+  memUF.AppendRecord([1, 'SP']);
+  memUF.AppendRecord([2, 'RJ']);
+  memUF.AppendRecord([3, 'MG']);
+
+  MemDataset1.CreateDataSet;
+  MemDataset1.AppendRecord([1, 'João', 'M', 'Rua A', '12345-000', 'São Paulo', '01/01/1990', True]);
+  MemDataset1.AppendRecord([2, 'Maria', 'F', 'Rua B', '54321-000', 'Rio de Janeiro', '02/02/1985', True]);
+
     MemDataset1.OnFilterRecord := @MemDataset1FilterRecord;
+
 end;
 
 Procedure TClienteCadastro.ExcluirCLienteDaAPI;
@@ -158,6 +177,8 @@ procedure TClienteCadastro.ConsultarClick(Sender: TObject);
 begin
       CarregarClientesDaAPI;
 end;
+
+
 
 procedure TClienteCadastro.AlterarClick(Sender: TObject);
 
@@ -308,7 +329,6 @@ procedure TClienteCadastro.FormClose(Sender: TObject;
   var CloseAction: TCloseAction);
 begin
       MemDataset1.Close;     // fecha o dataset
-  //MemDataset1.Delete; // limpa todos os registros
 end;
 
 

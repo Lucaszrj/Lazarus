@@ -5,7 +5,8 @@ unit Unit1;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Unit2;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, DBCtrls,
+  Unit2;
 
 type
 
@@ -15,6 +16,7 @@ type
     Cliente: TButton;
     CadastroFornecedor: TButton;
     CadastroProduto: TButton;
+    DBLookupComboBox1: TDBLookupComboBox;
     procedure ClienteClick(Sender: TObject);
   private
 
@@ -32,7 +34,7 @@ implementation
 { TCadastroPrincipal }
 
 //testegit
-//teste 2
+//teste
 
 procedure TCadastroPrincipal.ClienteClick(Sender: TObject);
   var

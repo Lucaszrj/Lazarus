@@ -5,7 +5,8 @@ unit Unit1;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Unit2;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, DBCtrls,
+  Unit2;
 
 type
 
@@ -16,6 +17,7 @@ type
     CadastroFornecedor: TButton;
     CadastroProduto: TButton;
     procedure ClienteClick(Sender: TObject);
+    procedure DBLookupComboBox2Change(Sender: TObject);
   private
 
   public
@@ -60,6 +62,11 @@ begin
   ClienteForm  := TClienteCadastro.Create(Self);   { Self (FormPrincipal) será o Owner }
 
   ClienteForm .Show;
+end;
+
+procedure TCadastroPrincipal.DBLookupComboBox2Change(Sender: TObject);
+begin
+
 end;
 
 end.

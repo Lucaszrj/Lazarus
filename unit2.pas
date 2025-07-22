@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls,
   DBGrids, fphttpclient, fpjson, jsonparser, DB, memds,DateUtils,
-  Unit3, opensslsockets, LCLType, Unit4;
+  Unit3, opensslsockets, LCLType, DBCtrls, Unit4;
 
 type
 
@@ -15,6 +15,9 @@ type
 
   TClienteCadastro = class(TForm)
     Alterar: TButton;
+    DataSourceUF: TDataSource;
+    DBLookupComboBox1: TDBLookupComboBox;
+    EditNomeUF: TEdit;
     FecharCliente: TButton;
     Deletar: TButton;
     EditBusca: TEdit;
@@ -31,8 +34,12 @@ type
     MemDataset1Nome: TStringField;
     MemDataset1Ref: TLongintField;
     MemDataset1Sexo: TStringField;
+    MemUF: TMemDataset;
+    MemUFid_uf: TLongintField;
+    MemUFuf: TStringField;
     procedure AlterarClick(Sender: TObject);
     procedure ConsultarClick(Sender: TObject);
+
     procedure DBGrid1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
       );
     procedure DeletarClick(Sender: TObject);
@@ -65,8 +72,11 @@ var
   FiltroTexto: String;
 
 procedure TClienteCadastro.FormCreate(Sender: TObject);
+
 begin
+
     MemDataset1.OnFilterRecord := @MemDataset1FilterRecord;
+
 end;
 
 Procedure TClienteCadastro.ExcluirCLienteDaAPI;
@@ -158,6 +168,8 @@ procedure TClienteCadastro.ConsultarClick(Sender: TObject);
 begin
       CarregarClientesDaAPI;
 end;
+
+
 
 procedure TClienteCadastro.AlterarClick(Sender: TObject);
 
