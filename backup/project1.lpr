@@ -11,7 +11,7 @@ uses
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, memdslaz, datetimectrls, Unit1, Unit2, Unit3, Unit4,
-  Unit7
+  Unit7, Unit5
   { you can add units after this };
 
 {$R *.res}
@@ -24,7 +24,8 @@ begin
   {$POP}
   Application.Initialize;
   Application.CreateForm(TCadastroPrincipal, CadastroPrincipal);
-  //Application.CreateForm(TProdutoCadastro, ProdutoCadastro);
+  Application.CreateForm(TProdutoCadastro, ProdutoCadastro);
+  Application.CreateForm(TForm1, Form1);
   //Application.CreateForm(TClienteCadastro, ClienteCadastro);
   //Application.CreateForm(TIncluirCliente, IncluirCliente);
   //Application.CreateForm(TAlterarCliente, AlterarCliente);

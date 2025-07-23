@@ -70,7 +70,7 @@ begin
     Add('nome', ftString, 100); // 100 é o tamanho do campo
   end;
 
-  MemDataSetGrupo.CreateDataSet;
+  MemDataSetGrupo.CreateTable;
     // MemDatasetgrupo.Open;     // 1º: Abre o dataset do grupo (para popular o Lookup)
  //    MemDataSetProduto.Open;   // 2º: Depois abre o dataset principal (produto)
 

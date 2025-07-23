@@ -30,6 +30,7 @@ object ProdutoCadastro: TProdutoCadastro
     Width = 75
     Caption = 'Incluir'
     TabOrder = 2
+    OnClick = IncluirClick
   end
   object Alterar: TButton
     Left = 8

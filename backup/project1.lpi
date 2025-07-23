@@ -85,6 +85,13 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit7"/>
       </Unit>
+      <Unit>
+        <Filename Value="unit5.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="IncluirProduto"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit5"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

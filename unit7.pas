@@ -34,6 +34,7 @@ type
     MemDatasetProdutoRef: TLongintField;
     procedure ConsultarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure IncluirClick(Sender: TObject);
   private
 
   public
@@ -73,6 +74,11 @@ begin
   MemDataSetGrupo.CreateTable;
     // MemDatasetgrupo.Open;     // 1º: Abre o dataset do grupo (para popular o Lookup)
  //    MemDataSetProduto.Open;   // 2º: Depois abre o dataset principal (produto)
+
+end;
+
+procedure TProdutoCadastro.IncluirClick(Sender: TObject);
+begin
 
 end;
 
