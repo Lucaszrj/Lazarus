@@ -1,0 +1,14 @@
+inherited ProdutoCadastro: TProdutoCadastro
+  Caption = 'Cadastro de Produtos'
+  inherited Consultar: TButton
+    OnClick = ConsultarClick
+  end
+  inherited DataSource1: TDataSource
+    Left = 80
+    Top = 248
+  end
+  inherited MemDataset1: TMemDataset
+    Left = 16
+    Top = 248
+  end
+end

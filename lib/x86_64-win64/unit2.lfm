@@ -117,37 +117,16 @@ object ClienteCadastro: TClienteCadastro
     TabOrder = 6
     OnClick = FecharClienteClick
   end
-  object DBLookupComboBox1: TDBLookupComboBox
-    Left = 368
-    Height = 23
-    Top = 272
-    Width = 100
-    DataField = 'Ref.'
-    DataSource = DataSource1
-    KeyField = 'id_uf'
-    ListField = 'uf'
-    ListFieldIndex = 0
-    ListSource = DataSourceUF
-    LookupCache = False
-    TabOrder = 7
-  end
-  object EditNomeUF: TEdit
-    Left = 256
-    Height = 23
-    Top = 272
-    Width = 80
-    TabOrder = 8
-  end
   object DataSource1: TDataSource
     DataSet = MemDataset1
-    Left = 56
-    Top = 216
+    Left = 64
+    Top = 240
   end
   object MemDataset1: TMemDataset
     FieldDefs = <>
     OnFilterRecord = MemDataset1FilterRecord
     Left = 8
-    Top = 208
+    Top = 240
     object MemDataset1Ref: TLongintField
       FieldKind = fkData
       FieldName = 'Ref.'
@@ -225,34 +204,5 @@ object ClienteCadastro: TClienteCadastro
       Required = False
       DisplayValues = 'True;False'
     end
-  end
-  object MemUF: TMemDataset
-    FieldDefs = <>
-    Left = 131
-    Top = 264
-    object MemUFid_uf: TLongintField
-      FieldKind = fkData
-      FieldName = 'id_uf'
-      Index = 0
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-    end
-    object MemUFuf: TStringField
-      FieldKind = fkData
-      FieldName = 'uf'
-      Index = 1
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-      Size = 50
-    end
-  end
-  object DataSourceUF: TDataSource
-    DataSet = MemUF
-    Left = 184
-    Top = 264
   end
 end

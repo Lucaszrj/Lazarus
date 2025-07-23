@@ -1,0 +1,183 @@
+object ProdutoCadastro: TProdutoCadastro
+  Left = 484
+  Height = 327
+  Top = 376
+  Width = 951
+  Caption = 'ProdutoCadastro'
+  ClientHeight = 327
+  ClientWidth = 951
+  OnCreate = FormCreate
+  object EditBusca: TEdit
+    Left = 8
+    Height = 23
+    Top = 32
+    Width = 75
+    TabOrder = 0
+  end
+  object Consultar: TButton
+    Left = 8
+    Height = 25
+    Top = 64
+    Width = 75
+    Caption = 'Consultar'
+    TabOrder = 1
+    OnClick = ConsultarClick
+  end
+  object Incluir: TButton
+    Left = 8
+    Height = 25
+    Top = 96
+    Width = 75
+    Caption = 'Incluir'
+    TabOrder = 2
+  end
+  object Alterar: TButton
+    Left = 8
+    Height = 25
+    Top = 128
+    Width = 75
+    Caption = 'Alterar'
+    TabOrder = 3
+  end
+  object Deletar: TButton
+    Left = 8
+    Height = 25
+    Top = 160
+    Width = 75
+    Caption = 'Deletar'
+    TabOrder = 4
+  end
+  object FecharCliente: TButton
+    Left = 8
+    Height = 25
+    Top = 192
+    Width = 75
+    Caption = 'Fechar'
+    TabOrder = 5
+  end
+  object DBGrid1: TDBGrid
+    Left = 152
+    Height = 231
+    Top = 24
+    Width = 720
+    Anchors = []
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'Ref'
+        Width = 175
+        FieldName = 'Ref'
+      end    
+      item
+        Title.Caption = 'Nome'
+        Width = 175
+        FieldName = 'Nome'
+      end    
+      item
+        Title.Caption = 'ID_Grupo'
+        Width = 175
+        FieldName = 'ID_Grupo'
+      end    
+      item
+        Title.Caption = 'Preco'
+        Width = 174
+        FieldName = 'Preco'
+      end>
+    DataSource = DataSourceProduto
+    FixedCols = 0
+    Options = [dgTitles, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgDblClickAutoSize]
+    ShowHint = True
+    TabOrder = 6
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 368
+    Height = 23
+    Top = 280
+    Width = 100
+    DataField = 'ID_Grupo'
+    DataSource = DataSourceProduto
+    KeyField = 'id'
+    ListField = 'Nome'
+    ListFieldIndex = 0
+    ListSource = DataSourcegrupo
+    LookupCache = False
+    TabOrder = 7
+  end
+  object MemDatasetProduto: TMemDataset
+    FieldDefs = <>
+    Left = 16
+    Top = 264
+    object MemDatasetProdutoRef: TLongintField
+      FieldKind = fkData
+      FieldName = 'Ref'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object MemDatasetProdutoNome: TStringField
+      FieldKind = fkData
+      FieldName = 'Nome'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 90
+    end
+    object MemDatasetProdutoID_Grupo: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_Grupo'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object MemDatasetProdutoPreco: TStringField
+      FieldKind = fkData
+      FieldName = 'Preco'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 10
+    end
+  end
+  object DataSourceProduto: TDataSource
+    DataSet = MemDatasetProduto
+    Left = 105
+    Top = 272
+  end
+  object DataSourcegrupo: TDataSource
+    DataSet = MemDatasetgrupo
+    Left = 584
+    Top = 272
+  end
+  object MemDatasetgrupo: TMemDataset
+    FieldDefs = <>
+    Left = 688
+    Top = 272
+    object MemDatasetgrupoid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object MemDatasetgruponome: TStringField
+      FieldKind = fkData
+      FieldName = 'nome'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+  end
+end

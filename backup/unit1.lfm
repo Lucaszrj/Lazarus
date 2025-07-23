@@ -30,17 +30,6 @@ object CadastroPrincipal: TCadastroPrincipal
     Width = 75
     Caption = 'Produto'
     TabOrder = 2
-  end
-  object DBLookupComboBox1: TDBLookupComboBox
-    Left = 76
-    Height = 23
-    Top = 122
-    Width = 100
-    DataField = 'Cep'
-    DataSource = ClienteCadastro.DataSource1
-    ListFieldIndex = 0
-    ListSource = ClienteCadastro.DataSource1
-    LookupCache = False
-    TabOrder = 3
+    OnClick = CadastroProdutoClick
   end
 end

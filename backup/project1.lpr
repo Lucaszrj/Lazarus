@@ -10,7 +10,8 @@ uses
   athreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, memdslaz, datetimectrls, Unit1, Unit2, Unit3, Unit4
+  Forms, memdslaz, datetimectrls, Unit1, Unit2, Unit3, Unit4,
+  Unit7
   { you can add units after this };
 
 {$R *.res}
@@ -23,9 +24,10 @@ begin
   {$POP}
   Application.Initialize;
   Application.CreateForm(TCadastroPrincipal, CadastroPrincipal);
-  Application.CreateForm(TClienteCadastro, ClienteCadastro);
-  Application.CreateForm(TIncluirCliente, IncluirCliente);
-  Application.CreateForm(TAlterarCliente, AlterarCliente);
+  //Application.CreateForm(TProdutoCadastro, ProdutoCadastro);
+  //Application.CreateForm(TClienteCadastro, ClienteCadastro);
+  //Application.CreateForm(TIncluirCliente, IncluirCliente);
+  //Application.CreateForm(TAlterarCliente, AlterarCliente);
   Application.Run;
 end.
 

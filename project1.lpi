@@ -78,6 +78,13 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit4"/>
       </Unit>
+      <Unit>
+        <Filename Value="unit7.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ProdutoCadastro"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit7"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -100,6 +107,11 @@
         </Win32>
       </Options>
     </Linking>
+    <Other>
+      <Verbosity>
+        <ShowDebugInfo Value="True"/>
+      </Verbosity>
+    </Other>
   </CompilerOptions>
   <Debugging>
     <Exceptions>

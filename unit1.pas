@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, DBCtrls,
-  Unit2;
+  Unit2, Unit7;
 
 type
 
@@ -16,8 +16,8 @@ type
     Cliente: TButton;
     CadastroFornecedor: TButton;
     CadastroProduto: TButton;
+    procedure CadastroProdutoClick(Sender: TObject);
     procedure ClienteClick(Sender: TObject);
-    procedure DBLookupComboBox2Change(Sender: TObject);
   private
 
   public
@@ -43,7 +43,7 @@ procedure TCadastroPrincipal.ClienteClick(Sender: TObject);
 begin
   {– Procura instância já aberta –}
   for i := 0 to Screen.FormCount - 1 do
-    if Screen.Forms[i] is TClienteCadastro then
+    if Screen.Forms[i].ClassType = TClienteCadastro then
     begin
       with TClienteCadastro(Screen.Forms[i]) do
       begin
@@ -64,10 +64,34 @@ begin
   ClienteForm .Show;
 end;
 
-procedure TCadastroPrincipal.DBLookupComboBox2Change(Sender: TObject);
+procedure TCadastroPrincipal.CadastroProdutoClick(Sender: TObject);
+  var
+  j: Integer;
+  ProdutoForm: TProdutoCadastro;
 begin
+  {– Procura instância já aberta –}
+  for j := 0 to Screen.FormCount - 1 do
+    if Screen.Forms[j].ClassType  =     TProdutoCadastro then
+    begin
+      with TProdutoCadastro(Screen.Forms[j]) do
+      begin
+        { Se estiver minimizado, restaura }
+        if WindowState = wsMinimized then
+          WindowState := wsNormal;
 
+        Show;        { garante que está visível }
+        BringToFront;
+        Activate;    { foca sem disparar exceção }
+      end;
+      Exit;          { Já existia → sai }
+    end;
+
+  {– Caso não exista, cria –}
+  ProdutoForm  := TProdutoCadastro.Create(Self);   { Self (FormPrincipal) será o Owner }
+
+  ProdutoForm .Show;
 end;
+
 
 end.
 

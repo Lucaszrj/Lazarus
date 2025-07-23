@@ -30,5 +30,6 @@ object CadastroPrincipal: TCadastroPrincipal
     Width = 75
     Caption = 'Produto'
     TabOrder = 2
+    OnClick = CadastroProdutoClick
   end
 end
